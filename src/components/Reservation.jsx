@@ -8,6 +8,8 @@ const initialForm = {
   formule: "standard",
   lieu: "atelier",
   adresse: "",
+  electricite: false,
+  eau: false,
   message: "",
 };
 
@@ -25,6 +27,10 @@ function buildMailtoUrl(form) {
     `Formule : ${FORMULE_LABELS[form.formule]}`,
     `Intervention : ${lieuLabel}`,
   ];
+  if (form.lieu === "domicile") {
+    lines.push(`Électricité disponible : ${form.electricite ? "Oui" : "Non"}`);
+    lines.push(`Eau disponible : ${form.eau ? "Oui" : "Non"}`);
+  }
   if (form.message) {
     lines.push(`Précisions : ${form.message}`);
   }
@@ -42,8 +48,8 @@ export default function Reservation({ selectedFormule }) {
   }, [selectedFormule]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((f) => ({ ...f, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setForm((f) => ({ ...f, [name]: type === "checkbox" ? checked : value }));
   };
 
   const handleSubmit = (e) => {
@@ -98,6 +104,21 @@ export default function Reservation({ selectedFormule }) {
                     onChange={handleChange}
                     required
                   />
+                </div>
+              )}
+              {form.lieu === "domicile" && (
+                <div>
+                  <span className="field-label">Disponible sur place</span>
+                  <div className="checkbox-row">
+                    <label className="checkbox">
+                      <input type="checkbox" name="electricite" checked={form.electricite} onChange={handleChange} />
+                      Électricité
+                    </label>
+                    <label className="checkbox">
+                      <input type="checkbox" name="eau" checked={form.eau} onChange={handleChange} />
+                      Eau
+                    </label>
+                  </div>
                 </div>
               )}
               <div>

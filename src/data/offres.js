@@ -6,7 +6,7 @@ export const offres = [
     price: "60 €",
     featured: false,
     included: [
-      "Aspiration intérieur (sols, tapis, sièges, coffre)",
+      "Aspiration rapide (sols, tapis, sièges, coffre)",
       "Plastiques principaux",
       "Vitres intérieures",
     ],
@@ -22,8 +22,8 @@ export const offres = [
     included: [
       "Aspiration intérieur (sols, tapis, sièges, coffre)",
       "Plastiques principaux et détails accessibles",
-      "Vitres intérieures et extérieures",
-      "Nettoyage extérieur (hors shampoing)",
+      "Vitres intérieures",
+      "Shampoing des sièges",
     ],
     excluded: [],
   },
@@ -43,6 +43,8 @@ export const offres = [
   },
 ];
 
-export const surchargeNote = `NB :
-* Une majoration forfaitaire de 40€ s'applique pour les SUV
-* Un supplément de 40 € peut être appliqué en cas de véhicule très sale ou poils d'animaux.`;
+export const surchargeNote = `NB : Des majorations peuvent être appliquées en cas :
+(1) De véhicule type SUV (+40 €)
+(2) De véhicule très sale (+40 €)
+
+À noter que les majorations peuvent s'additionner.`;

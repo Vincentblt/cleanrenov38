@@ -383,6 +383,10 @@
 .crv38 input:focus, .crv38 select:focus, .crv38 textarea:focus{outline:2px solid var(--gold); outline-offset:1px; border-color:var(--gold);}
 .crv38 textarea{resize:vertical; min-height:80px;}
 .crv38 .booking-submit{margin-top:6px;}
+.crv38 .field-label{font-size:.86rem; color:var(--text-muted); display:block; margin-bottom:6px;}
+.crv38 .checkbox-row{display:flex; gap:24px; flex-wrap:wrap;}
+.crv38 label.checkbox{display:inline-flex; align-items:center; gap:8px; margin:0; font-size:.95rem; color:var(--text); cursor:pointer;}
+.crv38 label.checkbox input{width:18px; height:18px; padding:0; margin:0; accent-color:var(--gold); cursor:pointer;}
 
 .crv38 footer{padding:56px 0 40px;}
 .crv38 .footer-grid{ display:grid; grid-template-columns:1.2fr .9fr .9fr .9fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--border); }
